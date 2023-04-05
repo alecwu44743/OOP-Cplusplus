@@ -5,6 +5,18 @@ class Rational{
     private:
         int numerator;
         int denominator;
+
+        int _gcd(int a, int b){
+            // interative solution
+            int temp;
+            while(b != 0){
+                temp = a % b;
+                a = b;
+                b = temp;
+            }
+
+            return a;
+        }
     public:
         Rational(){}  
 
@@ -22,18 +34,6 @@ class Rational{
 
         int getDenominator(){
             return this->denominator;
-        }
-
-        int _gcd(int a, int b){
-            // interative solution
-            int temp;
-            while(b != 0){
-                temp = a % b;
-                a = b;
-                b = temp;
-            }
-
-            return a;
         }
 
         void reduce(){
